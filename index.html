@@ -1,13 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>My Portfolio</title>
+		<title>Adrià Suárez Batllori</title>
 		<link rel="stylesheet" href="styles.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
-		<h1>Hi, I'm an IT student</h1>
-		<script src="script.js"></script>
+		<canvas id="bg-sphere"></canvas>
+		<nav>
+			<a class="logo" href="#">AS</a>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/about">About Me</a></li>
+				<li><a href="/projects">Projects</a></li>
+				<li><a href="/contact">Contact</a></li>
+				<li>
+					<button id="theme-toggle" aria-label="Toggle dark mode">
+						<img
+							src="assets/icons/Moon.svg"
+							alt="Dark Mode"
+							id="theme-icon"
+						/>
+					</button>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="hero">
+			<h1>Adrià Suárez Batllori - Developer</h1>
+			<a href="/projects.html" class="btn">View Work</a>
+		</div>
+
+		<div class="container">
+			<div class="card slide-track">
+				<h2>Languages</h2>
+				<div class="slide-wrapper">
+					<div class="slide-icons">
+						<div class="slide">
+							<img src="assets/icons/python.svg" alt="Python" />
+						</div>
+						<div class="slide">
+							<img src="assets/icons/html.svg" alt="HTML" />
+						</div>
+						<div class="slide">
+							<img src="assets/icons/css.svg" alt="CSS" />
+						</div>
+						<div class="slide">
+							<img src="assets/icons/docker.svg" alt="Docker" />
+						</div>
+						<div class="slide">
+							<img src="assets/icons/C.svg" alt="C" />
+						</div>
+						<div class="slide">
+							<img src="assets/icons/C++.svg" alt="C++" />
+						</div>
+						<div class="slide">
+							<img src="assets/icons/Java.svg" alt="Java" />
+						</div>
+						<div class="slide">
+							<img src="assets/icons/R.svg" alt="R" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+		<script src="sphere.js"></script>
+		<script src="theme.js"></script>
+		<script>
+			const slideTrack = document.querySelector(".slide-icons");
+			const slides = Array.from(slideTrack.children);
+
+			slides.forEach((slide) => {
+				const clone = slide.cloneNode(true);
+				clone.setAttribute("aria-hidden", "true");
+				slideTrack.appendChild(clone);
+			});
+		</script>
 	</body>
 </html>
