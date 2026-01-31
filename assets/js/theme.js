@@ -1,14 +1,16 @@
 /*
+ * -------------------------------------------------------------------------------------------------
  * theme.js
  * A script to handle light/dark theme toggling with local storage persistence.
+ * -------------------------------------------------------------------------------------------------
  */
 
 const toggleButton = document.getElementById("theme-toggle");
 const themeIcon = document.getElementById("theme-icon");
 const root = document.documentElement;
 
-const moonIcon = "assets/icons/Moon.svg";
-const sunIcon = "assets/icons/Sun.svg";
+const moonIcon = "/assets/icons/Moon.svg";
+const sunIcon = "/assets/icons/Sun.svg";
 
 const LIGHT_FOG = 0xdadadb;
 const DARK_FOG = 0x1a1a1a;

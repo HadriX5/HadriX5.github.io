@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Adrià Suárez Batllori</title>
-		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="/assets/css/styles.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -15,16 +15,23 @@
 	<body>
 		<canvas id="bg-sphere"></canvas>
 		<nav>
-			<a class="logo" href="#">AS</a>
+			<a class="logo" href="/">
+				<video
+					src="/assets/videos/animation_final.mp4"
+					autoplay
+					muted
+					loop
+				></video>
+			</a>
 			<ul>
 				<li><a href="/">Home</a></li>
-				<li><a href="/about">About Me</a></li>
-				<li><a href="/projects">Projects</a></li>
-				<li><a href="/contact">Contact</a></li>
+				<li><a href="/assets/html/about.html">About Me</a></li>
+				<li><a href="/assets/html/projects.html">Projects</a></li>
+				<li><a href="/assets/html/contact.html">Contact</a></li>
 				<li>
 					<button id="theme-toggle" aria-label="Toggle dark mode">
 						<img
-							src="assets/icons/Moon.svg"
+							src="/assets/icons/Moon.svg"
 							alt="Dark Mode"
 							id="theme-icon"
 						/>
@@ -35,45 +42,160 @@
 
 		<div class="hero">
 			<h1>Adrià Suárez Batllori - Developer</h1>
-			<a href="/projects.html" class="btn">View Work</a>
+			<a href="/assets/html/projects.html" class="btn">View Work</a>
 		</div>
 
 		<div class="container">
-			<div class="card slide-track">
-				<h2>Languages</h2>
-				<div class="slide-wrapper">
-					<div class="slide-icons">
-						<div class="slide">
-							<img src="assets/icons/python.svg" alt="Python" />
+			<div class="content-wrapper">
+				<div class="split-section">
+					<div class="intro-text">
+						<h2>About Me</h2>
+						<p>
+							Hello! I'm Adrià, a Computer Engineering student at
+							the University of Barcelona. Beyond the academic
+							setting, I see computer science as a tool to solve
+							real-world problems and have a positive impact on
+							people. During my studies, I've gained a solid
+							foundation in languages like Java, C++, and Python,
+							but what truly defines me is my curiosity and
+							adaptability. I'm not afraid to tackle new
+							technologies; on the contrary, I thrive on the
+							challenge of learning them. Currently, I am seeking
+							an opportunity to start my professional career in an
+							environment where I can contribute my energy, grow
+							as a developer, and, above all, learn from
+							experienced colleagues.
+						</p>
+						<a href="/assets/html/about.html" class="btn"
+							>Read more &rarr;</a
+						>
+					</div>
+					<div class="skills-wrapper">
+						<h2>My Skills</h2>
+						<div class="skill-category">
+							<h3>Core Languages</h3>
+							<div class="skill-group">
+								<span class="skill-tag">
+									<img src="/assets/icons/bash.svg" />
+									Bash</span
+								>
+								<span class="skill-tag"
+									><img src="/assets/icons/Java.svg" />
+									Java</span
+								>
+								<span class="skill-tag"
+									><img src="/assets/icons/python.svg" />
+									Python</span
+								>
+								<span class="skill-tag"
+									><img src="/assets/icons/C++.svg" />
+									C++</span
+								>
+								<span class="skill-tag"
+									><img src="/assets/icons/C.svg" /> C</span
+								>
+								<span class="skill-tag"
+									><img src="/assets/icons/R.svg" /> R</span
+								>
+							</div>
 						</div>
-						<div class="slide">
-							<img src="assets/icons/html.svg" alt="HTML" />
+						<div class="skill-category">
+							<h3>Web & Tools</h3>
+							<div class="skill-group">
+								<span class="skill-tag"
+									><img src="/assets/icons/linux.svg" />
+									Linux</span
+								>
+								<span class="skill-tag"
+									><img src="/assets/icons/docker.svg" />
+									Docker</span
+								>
+								<span class="skill-tag"
+									><img src="/assets/icons/html.svg" />
+									HTML</span
+								>
+								<span class="skill-tag"
+									><img src="/assets/icons/css.svg" />
+									CSS</span
+								>
+								<span class="skill-tag"
+									><img src="/assets/icons/javascript.svg" />
+									Javascript</span
+								>
+							</div>
 						</div>
-						<div class="slide">
-							<img src="assets/icons/css.svg" alt="CSS" />
-						</div>
-						<div class="slide">
-							<img src="assets/icons/docker.svg" alt="Docker" />
-						</div>
-						<div class="slide">
-							<img src="assets/icons/C.svg" alt="C" />
-						</div>
-						<div class="slide">
-							<img src="assets/icons/C++.svg" alt="C++" />
-						</div>
-						<div class="slide">
-							<img src="assets/icons/Java.svg" alt="Java" />
-						</div>
-						<div class="slide">
-							<img src="assets/icons/R.svg" alt="R" />
-						</div>
+					</div>
+				</div>
+				<div class="projects-grid">
+					<h2>Featured Projects</h2>
+					<div class="grid-wrapper">
+						<article class="project-card">
+							<div class="card-image">
+								<img
+									src="/assets/images/portfolio_project_snap.png"
+									alt="Portfolio V1 Screenshot"
+								/>
+							</div>
+							<div class="card-content">
+								<h3>Portfolio V1</h3>
+								<p>
+									A responsive portfolio website built with
+									HTML5, Custom CSS, and Three.js for 3D
+									background elements.
+								</p>
+								<div class="card-tags">
+									<span>HTML</span>
+									<span>CSS</span>
+									<span>JS</span>
+								</div>
+								<div class="card-links">
+									<a
+										href="https://github.com/HadriX5/HadriX5.github.io"
+										target="_blank"
+										>Code</a
+									>
+								</div>
+							</div>
+						</article>
+
+						<article class="project-card"></article>
+
+						<article class="project-card"></article>
 					</div>
 				</div>
 			</div>
 		</div>
+		<button onclick="topFunction()" id="to_top_button" title="Go to top">
+			<img src="/assets/icons/top-arrow.svg" alt="Top" />
+		</button>
+		<footer>
+			<p>&copy; 2026 Adrià Suárez Batllori. All rights reserved.</p>
+			<div class="github-link">
+				<span>Please visit my github at:</span>
+				<a
+					target="_blank"
+					rel="noopener noreferrer"
+					href="https://github.com/HadriX5"
+				>
+					<img
+						id="github-icon"
+						src="/assets/icons/GitHub_Black.svg"
+						alt="GitHub"
+					/>
+					<span>My GitHub</span>
+				</a>
+			</div>
+			<p>
+				For any inquiries, please see:
+				<a href="/assets/html/contact.html" class="contact-btn"
+					>Contact me</a
+				>
+			</p>
+		</footer>
+
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-		<script src="sphere.js"></script>
-		<script src="theme.js"></script>
+		<script src="/assets/js/sphere.js"></script>
+		<script src="/assets/js/theme.js"></script>
 		<script>
 			const slideTrack = document.querySelector(".slide-icons");
 			const slides = Array.from(slideTrack.children);
@@ -83,6 +205,29 @@
 				clone.setAttribute("aria-hidden", "true");
 				slideTrack.appendChild(clone);
 			});
+		</script>
+		<script>
+			let btn = document.getElementById("to_top_button");
+
+			window.onscroll = function () {
+				scrollFunction();
+			};
+
+			function scrollFunction() {
+				if (
+					document.body.scrollTop > 20 ||
+					document.documentElement.scrollTop > 20
+				) {
+					btn.style.display = "block";
+				} else {
+					btn.style.display = "none";
+				}
+			}
+
+			function topFunction() {
+				document.body.scrollTop = 0; /* For IOS */
+				document.documentElement.scrollTop = 0;
+			}
 		</script>
 	</body>
 </html>

@@ -1,9 +1,9 @@
 /*
- * --------------------------------------------------------------------------------------------------
+ * -------------------------------------------------------------------------------------------------
  * sphere.js
  * A Three.js script to create and animate a 3D sphere with wireframe and points,
  * designed to be used as a background element in a web portfolio.
- * --------------------------------------------------------------------------------------------------
+ * -------------------------------------------------------------------------------------------------
  */
 
 const SphereBg = (() => {
@@ -21,15 +21,16 @@ const SphereBg = (() => {
 	const I_ICOSAEDRON_RADIUS = 5;
 	const I_ICOSAEDRON_DETAIL = 1;
 	const I_ICOSAEDRON_LINE_COLOR = 0x2d3748;
-	const I_ICOSAEDRON_POINT_COLOR = 0x1a202c;
 
 	const CAMERA_START_Z = 20;
+	const className = "#bg-sphere";
 
 	// --- SETUP SCENE, CAMERA, RENDERER ---
-	const canvas = document.querySelector("#bg-sphere");
+	const canvas = document.querySelector(className);
 	const scene = new THREE.Scene();
 
-	scene.fog = new THREE.FogExp2(BG_COLOR, 0.04);
+	let density = 0.04;
+	scene.fog = new THREE.FogExp2(BG_COLOR, density);
 
 	const camera = new THREE.PerspectiveCamera(FOV, ASPECT, NEAR, FAR);
 
@@ -52,6 +53,7 @@ const SphereBg = (() => {
 		transparent: true,
 		opacity: 0.4,
 	});
+
 	const wireframe = new THREE.WireframeGeometry(geometry);
 	const lineMesh = new THREE.LineSegments(wireframe, lineMaterial);
 
@@ -62,11 +64,11 @@ const SphereBg = (() => {
 		opacity: 0.8,
 	});
 
-	const pointsMesh = new THREE.Points(geometry, pointsMaterial);
+	const pointMesh = new THREE.Points(geometry, pointsMaterial);
 
 	const sphereGroup = new THREE.Group();
 	sphereGroup.add(lineMesh);
-	sphereGroup.add(pointsMesh);
+	sphereGroup.add(pointMesh);
 
 	const innerGeo = new THREE.IcosahedronGeometry(
 		I_ICOSAEDRON_RADIUS,
