@@ -4,6 +4,19 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Adrià Suárez Batllori</title>
+		<link rel="icon" href="/assets/icons/favicon_black.svg" />
+		<link
+			rel="icon"
+			href="/assets/icons/favicon_black.svg"
+			type="image/svg+xml"
+			media="(prefers-color-scheme: light)"
+		/>
+		<link
+			rel="icon"
+			href="/assets/icons/favicon_white.svg"
+			type="image/svg+xml"
+			media="(prefers-color-scheme: dark)"
+		/>
 		<link rel="stylesheet" href="/assets/css/styles.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,18 +29,18 @@
 		<canvas id="bg-sphere"></canvas>
 		<nav>
 			<a class="logo" href="/">
-				<video
-					src="/assets/videos/animation_final.mp4"
-					autoplay
-					muted
-					loop
-				></video>
+				<video id="logo-video" autoplay muted loop playsinline>
+					<source
+						src="/assets/videos/black_BG.mp4"
+						type="video/mp4"
+					/>
+				</video>
 			</a>
 			<ul>
 				<li><a href="/">Home</a></li>
 				<li><a href="/assets/html/about.html">About Me</a></li>
 				<li><a href="/assets/html/projects.html">Projects</a></li>
-				<li><a href="/assets/html/contact.html">Contact</a></li>
+				<li><a href="/assets/html/contact.html">Contact Me</a></li>
 				<li>
 					<button id="theme-toggle" aria-label="Toggle dark mode">
 						<img
@@ -41,7 +54,8 @@
 		</nav>
 
 		<div class="hero">
-			<h1>Adrià Suárez Batllori - Developer</h1>
+			<h1>Adrià Suárez Batllori</h1>
+			<h2>Computer Engineer Student</h2>
 			<a href="/assets/html/projects.html" class="btn">View Work</a>
 		</div>
 
@@ -222,16 +236,6 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 		<script src="/assets/js/sphere.js"></script>
 		<script src="/assets/js/theme.js"></script>
-		<script>
-			const slideTrack = document.querySelector(".slide-icons");
-			const slides = Array.from(slideTrack.children);
-
-			slides.forEach((slide) => {
-				const clone = slide.cloneNode(true);
-				clone.setAttribute("aria-hidden", "true");
-				slideTrack.appendChild(clone);
-			});
-		</script>
 		<script>
 			let btn = document.getElementById("to_top_button");
 

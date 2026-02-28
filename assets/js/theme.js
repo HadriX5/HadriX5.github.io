@@ -7,6 +7,7 @@
 
 const toggleButton = document.getElementById("theme-toggle");
 const themeIcon = document.getElementById("theme-icon");
+const logoVideo = document.getElementById("logo-video");
 const root = document.documentElement;
 
 const moonIcon = "/assets/icons/Moon.svg";
@@ -19,10 +20,35 @@ const CSS_TRANSITION_DURATION = 400;
 
 let fogAnimation;
 
+function updateFavicon(isDark) {
+	const favicon = document.querySelector('link[rel="icon"]:not([media])');
+	if (favicon) {
+		favicon.href = isDark
+			? "/assets/icons/favicon_black.svg"
+			: "/assets/icons/favicon_white.svg";
+	}
+}
+
+function updateVideo(isDark) {
+	if (!logoVideo) return;
+
+	const newSrc = isDark
+		? "/assets/videos/black_BG.mp4"
+		: "/assets/videos/white_BG.mp4";
+
+	if (logoVideo.getAttribute("src") !== newSrc) {
+		logoVideo.src = newSrc;
+		logoVideo.load();
+		logoVideo.play();
+	}
+}
+
 if (localStorage.getItem("theme") === "dark") {
 	root.classList.add("dark-mode");
 	themeIcon.src = sunIcon;
 	setFogHex(DARK_FOG);
+	updateFavicon(true);
+	updateVideo(true);
 }
 
 toggleButton.addEventListener("click", () => {
@@ -34,6 +60,9 @@ toggleButton.addEventListener("click", () => {
 
 	const targetColor = isDarkMode ? DARK_FOG : LIGHT_FOG;
 	animateFogColor(targetColor, CSS_TRANSITION_DURATION);
+
+	updateFavicon(isDarkMode);
+	updateVideo(isDarkMode);
 });
 
 function setFogHex(colorHex) {
