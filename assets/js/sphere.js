@@ -13,23 +13,23 @@ const SphereBg = (() => {
 	const NEAR = 0.1;
 	const FAR = 1000;
 
-	const O_ICOSAEDRON_RADIUS = 10;
+	const O_ICOSAEDRON_RADIUS = 13;
 	const O_ICOSAEDRON_DETAIL = 2;
 	const O_ICOSAEDRON_LINE_COLOR = 0x444444;
 	const O_ICOSAEDRON_POINT_COLOR = 0x2d3748;
 
-	const I_ICOSAEDRON_RADIUS = 5;
+	const I_ICOSAEDRON_RADIUS = 7;
 	const I_ICOSAEDRON_DETAIL = 1;
 	const I_ICOSAEDRON_LINE_COLOR = 0x2d3748;
 
-	const CAMERA_START_Z = 20;
+	const CAMERA_START_Z = 18;
 	const className = "#bg-sphere";
 
 	// --- SETUP SCENE, CAMERA, RENDERER ---
 	const canvas = document.querySelector(className);
 	const scene = new THREE.Scene();
 
-	let density = 0.04;
+	let density = 0.025;
 	scene.fog = new THREE.FogExp2(BG_COLOR, density);
 
 	const camera = new THREE.PerspectiveCamera(FOV, ASPECT, NEAR, FAR);
