@@ -203,6 +203,9 @@
 			</div>
 		</section>
 
+		<button onclick="topFunction()" id="to_top_button" title="Go to top">
+			<img src="/assets/icons/top-arrow.svg" alt="Top" />
+		</button>
 		<footer>
 			<p>&copy; 2026 Adrià Suárez Batllori. All rights reserved.</p>
 			<div class="github-link">
@@ -231,5 +234,28 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 		<script src="/assets/js/sphere.js"></script>
 		<script src="/assets/js/theme.js"></script>
+		<script>
+			let btn = document.getElementById("to_top_button");
+
+			window.onscroll = function () {
+				scrollFunction();
+			};
+
+			function scrollFunction() {
+				if (
+					document.body.scrollTop > 100 ||
+					document.documentElement.scrollTop > 100
+				) {
+					btn.classList.add("show");
+				} else {
+					btn.classList.remove("show");
+				}
+			}
+
+			function topFunction() {
+				document.body.scrollTop = 0; /* For IOS */
+				document.documentElement.scrollTop = 0;
+			}
+		</script>
 	</body>
 </html>

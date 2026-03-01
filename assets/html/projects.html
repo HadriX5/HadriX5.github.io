@@ -52,7 +52,186 @@
 				</li>
 			</ul>
 		</nav>
+		<section class="about-section hero-about">
+			<h1 class="about-title">
+				Selected <br /><span class="accent-color">Projects</span>
+			</h1>
+		</section>
 
+		<section class="about-section">
+			<div class="project-header-main">
+				<h2 class="section-title">Hybrid AI Phishing Detector</h2>
+				<a
+					href="https://github.com/HadriX5/Phishing-detector-AI-Project"
+					target="_blank"
+					class="project-link-icon"
+					>View Repository &rarr;</a
+				>
+			</div>
+			<div class="large-text-block">
+				<p>
+					Developed a cutting-edge security system that identifies
+					malicious URLs by combining
+					<strong>Reinforcement Learning (Q-Learning)</strong> with
+					<strong>K-Nearest Neighbors (KNN)</strong>. This hybrid
+					architecture was designed to overcome the "state space
+					explosion" in RL, achieving a remarkable
+					<strong>99.56% accuracy</strong> on the PhiUSIIL dataset by
+					balancing deterministic memory and supervised
+					generalization.
+				</p>
+				<p>
+					The core engineering challenge involved building a
+					<strong>feature discretization pipeline</strong> using
+					quantile-based binning to transform continuous URL and HTML
+					data—such as character transition rates and domain-title
+					similarity scores—into discrete states. The system operates
+					with high efficiency: it uses the Q-table for
+					<strong>constant-time O(1) lookups</strong> on known states
+					and only triggers the KNN fallback layer when encountering
+					unseen patterns, ensuring real-time performance without
+					sacrificing precision.
+				</p>
+				<div class="project-tech-stack">
+					<span>Python</span>
+					<span>Q-Learning</span>
+					<span>KNN Fallback</span>
+					<span>Feature Discretization</span>
+					<span>NumPy</span>
+					<span>Cybersecurity</span>
+				</div>
+			</div>
+		</section>
+
+		<section class="about-section">
+			<div class="project-header-main">
+				<h2 class="section-title">UniReview Android App</h2>
+				<a
+					href="https://github.com/HadriX5/unireview-android"
+					target="_blank"
+					class="project-link-icon"
+					>View Repository &rarr;</a
+				>
+			</div>
+			<div class="large-text-block">
+				<p>
+					Developed a comprehensive academic review platform for the
+					Android ecosystem, designed to facilitate transparency in
+					university course evaluations. The core of the application
+					is built upon a
+					<strong>strict 4-layer Clean Architecture</strong>
+					(Presentation, Domain, Feature, and Data), ensuring that
+					business logic remains independent of external frameworks or
+					UI changes.
+				</p>
+				<p>
+					I implemented
+					<strong>Reactive Programming using RxJava</strong> to manage
+					complex asynchronous data streams, significantly reducing UI
+					thread blocking during network operations. For data
+					persistence and authentication, I integrated
+					<strong>Firebase Services</strong>, while maintainability
+					was enhanced through rigorous
+					<strong>Unit Testing</strong> of use cases and domain
+					entities.
+				</p>
+				<div class="project-tech-stack">
+					<span>Android SDK</span>
+					<span>Clean Architecture</span>
+					<span>RxJava</span>
+					<span>Firebase</span>
+					<span>Unit Testing</span>
+					<span>SOLID Principles</span>
+				</div>
+			</div>
+		</section>
+
+		<section class="about-section">
+			<div class="project-header-main">
+				<h2 class="section-title">MovieLens Recommendation Engine</h2>
+				<a
+					href="https://github.com/HadriX5/cf-recommender"
+					target="_blank"
+					class="project-link-icon"
+					>View Repository &rarr;</a
+				>
+			</div>
+			<div class="large-text-block">
+				<p>
+					Designed and implemented a high-performance
+					<strong>Collaborative Filtering engine</strong> using the
+					MovieLens-1M dataset. The project focused on optimizing
+					computational efficiency by leveraging
+					<strong>NumPy vectorized operations</strong>, replacing
+					traditional iterative loops with matrix-based similarity
+					calculations (Euclidean and Cosine distance).
+				</p>
+				<p>
+					Beyond the algorithm, the project involved an in-depth
+					<strong>demographic analysis</strong> to detect rating bias.
+					I engineered a data pipeline to identify behavioral
+					discrepancies across gender and age groups, visualizing
+					these patterns using Matplotlib and Seaborn. The model's
+					accuracy was rigorously validated using
+					<strong>Mean Absolute Error (MAE)</strong> metrics across
+					different sparsity levels.
+				</p>
+				<div class="project-tech-stack">
+					<span>Python</span>
+					<span>NumPy</span>
+					<span>Pandas</span>
+					<span>Scikit-learn</span>
+					<span>Collaborative Filtering</span>
+					<span>Data Visualization</span>
+					<span>Statistical Analysis</span>
+				</div>
+			</div>
+		</section>
+
+		<section class="about-section">
+			<div class="project-header-main">
+				<h2 class="section-title">Open n-gram Language Detector</h2>
+				<a
+					href="https://github.com/HadriX5/open-ngram-language-detector"
+					target="_blank"
+					class="project-link-icon"
+					>View Repository &rarr;</a
+				>
+			</div>
+			<div class="large-text-block">
+				<p>
+					Built a robust Language Identification (LI) system from the
+					ground up, implementing a
+					<strong>custom Multinomial Naive Bayes classifier</strong>
+					without relying on high-level ML libraries for the core
+					logic. The engine is designed to handle high-dimensional
+					sparse data by calculating log-probabilities and applying
+					<strong>Laplace Smoothing</strong> to prevent
+					zero-probability issues with unseen tokens.
+				</p>
+				<p>
+					A key innovation was the implementation of
+					<strong>Open n-grams (skip-grams)</strong> for feature
+					extraction, which allows the model to capture morphological
+					patterns even in the presence of noise or typos. This
+					approach significantly improved performance on short-text
+					classification compared to standard character n-grams. The
+					system includes an explainability layer to visualize the
+					weight of specific tokens in the final prediction.
+				</p>
+				<div class="project-tech-stack">
+					<span>NumPy</span>
+					<span>Algorithm Design</span>
+					<span>NLP</span>
+					<span>Probability Theory</span>
+					<span>Feature Engineering</span>
+				</div>
+			</div>
+		</section>
+
+		<button onclick="topFunction()" id="to_top_button" title="Go to top">
+			<img src="/assets/icons/top-arrow.svg" alt="Top" />
+		</button>
 		<footer>
 			<p>&copy; 2026 Adrià Suárez Batllori. All rights reserved.</p>
 			<div class="github-link">
@@ -90,12 +269,12 @@
 
 			function scrollFunction() {
 				if (
-					document.body.scrollTop > 20 ||
-					document.documentElement.scrollTop > 20
+					document.body.scrollTop > 100 ||
+					document.documentElement.scrollTop > 100
 				) {
-					btn.style.display = "block";
+					btn.classList.add("show");
 				} else {
-					btn.style.display = "none";
+					btn.classList.remove("show");
 				}
 			}
 
