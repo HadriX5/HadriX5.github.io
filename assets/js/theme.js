@@ -20,49 +20,38 @@ const CSS_TRANSITION_DURATION = 400;
 
 let fogAnimation;
 
-function updateFavicon(isDark) {
-	const favicon = document.querySelector('link[rel="icon"]:not([media])');
-	if (favicon) {
-		favicon.href = isDark
-			? "/assets/icons/favicon_black.svg"
-			: "/assets/icons/favicon_white.svg";
-	}
-}
-
 function updateVideo(isDark) {
-	if (!logoVideo) return;
+    if (!logoVideo) return;
+
+	const source = logoVideo.querySelector("source");
+    if (!source) return;
 
 	const newSrc = isDark
-		? "/assets/videos/black_BG.mp4"
-		: "/assets/videos/white_BG.mp4";
+        ? "/assets/videos/black_BG.mp4"
+        : "/assets/videos/white_BG.mp4";
 
-	if (logoVideo.getAttribute("src") !== newSrc) {
-		logoVideo.src = newSrc;
-		logoVideo.load();
-		logoVideo.play();
-	}
+    if (source.getAttribute("src") !== newSrc) {
+        source.setAttribute("src", newSrc);
+        logoVideo.load();
+        logoVideo.play().catch(e => console.log("Playback error:", e));
+    }
 }
 
-if (localStorage.getItem("theme") === "dark") {
-	root.classList.add("dark-mode");
-	themeIcon.src = sunIcon;
-	setFogHex(DARK_FOG);
-	updateFavicon(true);
-	updateVideo(true);
-}
+document.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme");
+    const isDarkMode = savedTheme === "dark";
 
-toggleButton.addEventListener("click", () => {
-	root.classList.toggle("dark-mode");
+    if (isDarkMode) {
+        root.classList.add("dark-mode");
+        if (themeIcon) themeIcon.src = sunIcon;
+        setFogHex(DARK_FOG);
+    } else {
+        root.classList.remove("dark-mode");
+        if (themeIcon) themeIcon.src = moonIcon;
+        setFogHex(LIGHT_FOG);
+    }
 
-	const isDarkMode = root.classList.contains("dark-mode");
-	themeIcon.src = isDarkMode ? sunIcon : moonIcon;
-	localStorage.setItem("theme", isDarkMode ? "dark" : "light");
-
-	const targetColor = isDarkMode ? DARK_FOG : LIGHT_FOG;
-	animateFogColor(targetColor, CSS_TRANSITION_DURATION);
-
-	updateFavicon(isDarkMode);
-	updateVideo(isDarkMode);
+    updateVideo(isDarkMode);
 });
 
 function setFogHex(colorHex) {
@@ -105,3 +94,16 @@ function animateFogColor(targetHex, duration) {
 
 	fogAnimation = requestAnimationFrame(loop);
 }
+
+toggleButton.addEventListener("click", () => {
+	root.classList.toggle("dark-mode");
+
+	const isDarkMode = root.classList.contains("dark-mode");
+	themeIcon.src = isDarkMode ? sunIcon : moonIcon;
+	localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+
+	const targetColor = isDarkMode ? DARK_FOG : LIGHT_FOG;
+	animateFogColor(targetColor, CSS_TRANSITION_DURATION);
+
+	updateVideo(isDarkMode);
+});
